@@ -1,6 +1,6 @@
 {
   "wedoctor-0820": {
-    "file_name": "webdoctor-traindata(CMB)-v20240820.json",
+    "file_name": "webdoctor-traindata-CMB-v20240820.json",
     "columns": {
       "prompt": "instruction",
       "query": "input",
