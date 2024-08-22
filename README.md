@@ -176,3 +176,50 @@
 
 ## 如何使用
 
+### 数据准备
+1. 指令监督微调数据集，数据需要放在data目录下，以Alpaca 格式
+- [样例数据集](data/alpaca_zh_demo.json)在指令监督微调时，`instruction` 列对应的内容会与 `input` 列对应的内容拼接后作为人类指令，即人类指令为 `instruction\ninput`。而 `output` 列对应的内容为模型回答。
+
+如果指定，`system` 列对应的内容将被作为系统提示词。
+
+`history` 列是由多个字符串二元组构成的列表，分别代表历史消息中每轮对话的指令和回答。注意在指令监督微调时，历史消息中的回答内容**也会被用于模型学习**。
+```json
+// 数据格式样例
+[
+  {
+    "instruction": "人类指令（必填）",
+    "input": "人类输入（选填）",
+    "output": "模型回答（必填）",
+    "system": "系统提示词（选填）",
+    "history": [
+      ["第一轮指令（选填）", "第一轮回答（选填）"],
+      ["第二轮指令（选填）", "第二轮回答（选填）"]
+    ]
+  }
+]
+```
+2. 在[dataset_info.json](data/dataset_info.json)中将构造数据字段进行描述，
+对于上述格式的数据，`dataset_info.json` 中的*数据集描述*应为：
+
+```json
+"数据集名称": {
+  "file_name": "data.json",
+  "columns": {
+    "prompt": "instruction",
+    "query": "input",
+    "response": "output",
+    "system": "system",
+    "history": "history"
+  }
+}
+```
+### 参数配置
+
+在examples目录下创建训练配置文件，例如[sft配置文件](examples/train_full/llama3_full_sft_ds3.yaml)
+
+### 开启训练
+使用[shell](run.sh)脚本开启训练
+
+```shell
+sh run.sh
+```

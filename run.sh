@@ -1,8 +1,10 @@
 #!/bin/bash
-export PYTHONPATH="/home/mai-llm-train-service/LLaMA-Factory/src:$PYTHONPATH"
-NNODES=1
+# 本地路由
+CURRENT_DIR="$( cd "$( dirname "$0" )" && pwd )"
+export PYTHONPATH=$PYTHONPATH:${CURRENT_DIR}/src
+NNODES=1 # Node数
 NODE_RANK=0
-GPUS_PER_NODE=4
+GPUS_PER_NODE=4 # Node卡数
 MASTER_ADDR=localhost
 MASTER_PORT=$(shuf -n 1 -i 10000-65535)
 

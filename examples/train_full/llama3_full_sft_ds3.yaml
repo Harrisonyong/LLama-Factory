@@ -1,4 +1,4 @@
-### model
+### model参数路径
 model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
 
 ### method
@@ -10,8 +10,9 @@ deepspeed: examples/deepspeed/ds_z3_config.json
 ### dataset
 dataset: identity,alpaca_en_demo
 template: llama3
+# max_padding_len
 cutoff_len: 1024
-max_samples: 1000
+# max_samples: 1000
 overwrite_cache: true
 preprocessing_num_workers: 16
 
