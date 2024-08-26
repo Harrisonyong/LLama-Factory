@@ -217,9 +217,17 @@
 
 在examples目录下创建训练配置文件，例如[sft配置文件](examples/train_full/llama3_full_sft_ds3.yaml)
 
+[gemma参数配置](examples/train_full/gemma_full_sft_ds3.yaml)
+
 ### 开启训练
 使用[shell](run.sh)脚本开启训练
 
 ```shell
 sh run.sh
+```
+
+gemma训练：使用run_gemma.sh脚本
+
+```shell
+sh run_gemma.sh
 ```
