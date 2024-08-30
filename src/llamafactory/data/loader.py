@@ -25,7 +25,7 @@ from ..extras.logging import get_logger
 from ..extras.misc import has_tokenized_data
 from .aligner import align_dataset
 from .data_utils import merge_dataset
-from .parser import get_dataset_list
+from .parser import get_dataset_list, get_val_dataset_list
 from .preprocess import get_preprocess_and_print_func
 from .template import get_template_and_fix_tokenizer
 
@@ -174,7 +174,6 @@ def get_dataset(
             all_datasets.append(load_single_dataset(dataset_attr, model_args, data_args, training_args))
 
         dataset = merge_dataset(all_datasets, data_args, training_args)
-
     with training_args.main_process_first(desc="pre-process dataset"):
         preprocess_func, print_function = get_preprocess_and_print_func(
             data_args, training_args, stage, template, tokenizer, processor
@@ -197,6 +196,51 @@ def get_dataset(
                 logger.info("Please restart the training with `tokenized_path: {}`.".format(data_args.tokenized_path))
 
             sys.exit(0)
+
+        if training_args.should_log:
+            try:
+                print_function(next(iter(dataset)))
+            except StopIteration:
+                if stage == "pt":
+                    raise RuntimeError("Cannot find sufficient samples, consider increasing dataset size.")
+                else:
+                    raise RuntimeError("Cannot find valid samples, check `data/README.md` for the data format.")
+
+        return dataset
+
+def get_val_dataset(
+    model_args: "ModelArguments",
+    data_args: "DataArguments",
+    training_args: "Seq2SeqTrainingArguments",
+    stage: Literal["pt", "sft", "rm", "ppo", "kto"],
+    tokenizer: "PreTrainedTokenizer",
+    processor: Optional["ProcessorMixin"] = None,
+) -> Union["Dataset", "IterableDataset"]:
+    template = get_template_and_fix_tokenizer(tokenizer, data_args.template, data_args.tool_format)
+    if data_args.train_on_prompt and template.efficient_eos:
+        raise ValueError("Current template does not support `train_on_prompt`.")
+    with training_args.main_process_first(desc="load dataset"):
+        all_datasets = []
+        for dataset_attr in get_val_dataset_list(data_args):
+            logger.info("loaded dataset from {}".format(dataset_attr.dataset_name))
+            all_datasets.append(load_single_dataset(dataset_attr, model_args, data_args, training_args))
+        
+        dataset = merge_dataset(all_datasets, data_args, training_args)
+    
+    with training_args.main_process_first(desc="pre-process dataset"):
+        preprocess_func, print_function = get_preprocess_and_print_func(
+            data_args, training_args, stage, template, tokenizer, processor
+        )
+        column_names = list(next(iter(dataset)).keys())
+        kwargs = {}
+        if not data_args.streaming:
+            kwargs = dict(
+                num_proc=data_args.preprocessing_num_workers,
+                load_from_cache_file=(not data_args.overwrite_cache) or (training_args.local_process_index != 0),
+                desc="Running tokenizer on dataset",
+            )
+
+        dataset = dataset.map(preprocess_func, batched=True, remove_columns=column_names, **kwargs)
 
         if training_args.should_log:
             try:

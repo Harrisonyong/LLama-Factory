@@ -9,6 +9,7 @@ deepspeed: examples/deepspeed/ds_z3_config.json
 
 ### dataset
 dataset: alpaca_en_demo
+val_dataset: wedoctor-0711
 template: gemma
 # max_padding_len
 cutoff_len: 1024
@@ -34,7 +35,7 @@ bf16: true
 ddp_timeout: 180000000
 
 ### eval
-val_size: 0.1
+# val_size: 0
 per_device_eval_batch_size: 1
 eval_strategy: steps
 eval_steps: 500

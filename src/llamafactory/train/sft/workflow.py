@@ -17,7 +17,7 @@
 
 from typing import TYPE_CHECKING, List, Optional
 
-from ...data import SFTDataCollatorWith4DAttentionMask, get_dataset, split_dataset
+from ...data import SFTDataCollatorWith4DAttentionMask, get_dataset, split_dataset, get_val_dataset
 from ...extras.constants import IGNORE_INDEX
 from ...extras.misc import get_logits_processor
 from ...extras.ploting import plot_loss
@@ -67,17 +67,32 @@ def run_sft(
     training_args.remove_unused_columns = False if model_args.visual_inputs else training_args.remove_unused_columns
 
     # Initialize our Trainer
-    trainer = CustomSeq2SeqTrainer(
-        model=model,
-        args=training_args,
-        finetuning_args=finetuning_args,
-        data_collator=data_collator,
-        callbacks=callbacks,
-        compute_metrics=ComputeMetrics(tokenizer) if training_args.predict_with_generate else compute_accuracy,
-        preprocess_logits_for_metrics=None if training_args.predict_with_generate else eval_logit_processor,
-        **tokenizer_module,
-        **split_dataset(dataset, data_args, training_args),
-    )
+    if data_args.val_dataset:
+        val_dataset = get_val_dataset(model_args, data_args, training_args, stage="sft", **tokenizer_module)
+        trainer = CustomSeq2SeqTrainer(
+            model=model,
+            args=training_args,
+            finetuning_args=finetuning_args,
+            data_collator=data_collator,
+            train_dataset = dataset,
+            eval_dataset = val_dataset,
+            callbacks=callbacks,
+            compute_metrics=ComputeMetrics(tokenizer) if training_args.predict_with_generate else compute_accuracy,
+            preprocess_logits_for_metrics=None if training_args.predict_with_generate else eval_logit_processor,
+            **tokenizer_module,
+        )
+    else:
+        trainer = CustomSeq2SeqTrainer(
+            model=model,
+            args=training_args,
+            finetuning_args=finetuning_args,
+            data_collator=data_collator,
+            callbacks=callbacks,
+            compute_metrics=ComputeMetrics(tokenizer) if training_args.predict_with_generate else compute_accuracy,
+            preprocess_logits_for_metrics=None if training_args.predict_with_generate else eval_logit_processor,
+            **tokenizer_module,
+            **split_dataset(dataset, data_args, training_args),
+        )
 
     # Keyword arguments for `model.generate`
     gen_kwargs = generating_args.to_dict()

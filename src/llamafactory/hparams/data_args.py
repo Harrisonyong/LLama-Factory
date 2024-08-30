@@ -33,6 +33,10 @@ class DataArguments:
         default=None,
         metadata={"help": "The name of provided dataset(s) to use. Use commas to separate multiple datasets."},
     )
+    val_dataset: Optional[str] = field(
+        default=None,
+        metadata={"help":"The name of provided validate dataset(s) to use. Use commas to seperate multiple datasets."}
+    )
     dataset_dir: str = field(
         default="data",
         metadata={"help": "Path to the folder containing the datasets."},
@@ -112,3 +116,4 @@ class DataArguments:
 
         if self.streaming and self.max_samples is not None:
             raise ValueError("`max_samples` is incompatible with `streaming`.")
+

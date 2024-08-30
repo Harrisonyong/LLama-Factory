@@ -149,3 +149,59 @@ def get_dataset_list(data_args: "DataArguments") -> List["DatasetAttr"]:
         dataset_list.append(dataset_attr)
 
     return dataset_list
+
+def get_val_dataset_list(data_args: "DataArguments") -> List["DatasetAttr"]:
+    if data_args.val_dataset is not None:
+        dataset_names = [ds.strip() for ds in data_args.val_dataset.split(",")]
+    else:
+        raise  ValueError(
+            "Please provide a local dataset for validation"
+        )
+    
+    try:
+        with open(os.path.join(data_args.dataset_dir, DATA_CONFIG), "r") as f:
+                dataset_info = json.load(f)
+    except Exception as err:
+            if len(dataset_names) != 0:
+                raise ValueError(
+                    "Cannot open {} due to {}.".format(os.path.join(data_args.dataset_dir, DATA_CONFIG), str(err))
+                )
+            dataset_info = None
+    
+    dataset_list: List[DatasetAttr] = []
+    for name in dataset_names:
+        if name not in dataset_info:
+            raise ValueError("Undefined dataset {} in {}.".format(name, DATA_CONFIG))
+        dataset_attr = DatasetAttr("file", dataset_name=dataset_info[name]["file_name"])
+        dataset_attr.set_attr("formatting", dataset_info[name], default="alpaca")
+        dataset_attr.set_attr("ranking", dataset_info[name], default=False)
+        dataset_attr.set_attr("subset", dataset_info[name])
+        dataset_attr.set_attr("folder", dataset_info[name])
+        dataset_attr.set_attr("num_samples", dataset_info[name])
+
+        if "columns" in dataset_info[name]:
+            column_names = ["system", "tools", "images", "chosen", "rejected", "kto_tag"]
+            if dataset_attr.formatting == "alpaca":
+                column_names.extend(["prompt", "query", "response", "history"])
+            else:
+                column_names.extend(["messages"])
+
+            for column_name in column_names:
+                dataset_attr.set_attr(column_name, dataset_info[name]["columns"])
+
+        
+        if dataset_attr.formatting == "sharegpt" and "tags" in dataset_info[name]:
+            tag_names = (
+                "role_tag",
+                "content_tag",
+                "user_tag",
+                "assistant_tag",
+                "observation_tag",
+                "function_tag",
+                "system_tag",
+            )
+            for tag in tag_names:
+                dataset_attr.set_attr(tag, dataset_info[name]["tags"])
+
+        dataset_list.append(dataset_attr)
+    return dataset_list
