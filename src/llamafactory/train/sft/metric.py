@@ -21,6 +21,7 @@ from typing import TYPE_CHECKING, Dict
 
 import numpy as np
 import torch
+import re
 from transformers.utils import is_jieba_available, is_nltk_available
 
 from ...extras.constants import IGNORE_INDEX
@@ -58,6 +59,30 @@ def eval_logit_processor(logits: "torch.Tensor", labels: "torch.Tensor") -> "tor
     logits = logits[0] if isinstance(logits, (list, tuple)) else logits
     return torch.argmax(logits, dim=-1)
 
+def compute_metrics_for_label(pred_str, label_str):
+    match = re.search(r'\b([ABCDE])\b', pred_str)
+    if match:
+        predicted_answer = match.group(1)
+        return predicted_answer == label_str
+    return False
+
+COMPUTE_METHOD = {"func": compute_metrics_for_label}
+
+@dataclass
+class ComputeLabelMetrics:
+    tokenizer: "PreTrainedTokenizer"
+    
+    def __call__(self, eval_preds: "EvalPrediction") -> Dict[str, float]:
+        preds, labels = eval_preds.predictions, eval_preds.label_ids
+        accuracies = []
+        for i in range(len(preds)):
+            pred, label = preds[i, :-1], labels[i, 1:]
+            label_mask = label != IGNORE_INDEX
+            decoded_preds = self.tokenizer.batch_decode(pred[label_mask], skip_special_tokens=True)
+            decoded_labels = self.tokenizer.batch_decode(label[label_mask], skip_special_tokens=True)
+            func = COMPUTE_METHOD["func"]
+            accuracies.append(np.mean(func("".join(decoded_preds), "".join(decoded_labels))))
+        return {"accuracy": float(np.mean(accuracies))}
 
 @dataclass
 class ComputeMetrics:

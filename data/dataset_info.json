@@ -1,4 +1,13 @@
 {
+  "test-eval": {
+    "file_name": "webdoctor-testeval.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "system": "system"
+    }
+  },
   "wedoctor-0820": {
     "file_name": "webdoctor-traindata-CMB-v20240820.json",
     "columns": {

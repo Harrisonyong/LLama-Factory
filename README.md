@@ -219,6 +219,33 @@
 
 [gemma参数配置](examples/train_full/gemma_full_sft_ds3.yaml)
 
+#### 指定验证集和自定义验证代码
+- 指定验证集：在配置文件中指定val_dataset参数
+```yaml
+### dataset
+dataset: wedoctor-0711
+val_dataset: test-eval
+template: gemma
+# max_padding_len
+cutoff_len: 1024
+# max_samples: 1000
+overwrite_cache: true
+preprocessing_num_workers: 16
+```
+- 指定验证方式：在[metrics](src/llamafactory/train/sft/metric.py)中自定义eval_accuracy的计算方式
+```python
+# 自定义计算逻辑
+def compute_metrics_for_label(pred_str, label_str):
+    match = re.search(r'\b([ABCDE])\b', pred_str)
+    if match:
+        predicted_answer = match.group(1)
+        return predicted_answer == label_str
+    return False
+# 指定计算函数
+COMPUTE_METHOD = {"func": compute_metrics_for_label}
+
+```
+
 ### 开启训练
 使用[shell](run.sh)脚本开启训练
 
