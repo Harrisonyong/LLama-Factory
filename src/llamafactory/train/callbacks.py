@@ -294,6 +294,7 @@ class LogCallback(TrainerCallback):
             total_steps=self.max_steps,
             loss=state.log_history[-1].get("loss", None),
             eval_loss=state.log_history[-1].get("eval_loss", None),
+            eval_accuracy=state.log_history[-1].get("eval_accuracy", None),
             predict_loss=state.log_history[-1].get("predict_loss", None),
             reward=state.log_history[-1].get("reward", None),
             accuracy=state.log_history[-1].get("rewards/accuracies", None),
