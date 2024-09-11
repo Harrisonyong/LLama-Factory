@@ -1,2 +1,4 @@
 saves/
 data/webdoctor*
+__pycache__/
+*.pyc
