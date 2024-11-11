@@ -55,34 +55,46 @@ def compute_accuracy(eval_preds: "EvalPrediction") -> Dict[str, float]:
     return {"accuracy": float(np.mean(accuracies))}
 
 
-def eval_logit_processor(logits: "torch.Tensor", labels: "torch.Tensor") -> "torch.Tensor":
+def eval_logit_processor(
+    logits: "torch.Tensor", labels: "torch.Tensor"
+) -> "torch.Tensor":
     logits = logits[0] if isinstance(logits, (list, tuple)) else logits
     return torch.argmax(logits, dim=-1)
 
+
 def compute_metrics_for_label(pred_str, label_str):
-    match = re.search(r'\b([ABCDE])\b', pred_str)
+    match = re.search(r"\b([ABCDE])\b", pred_str)
     if match:
         predicted_answer = match.group(1)
         return predicted_answer == label_str
     return False
 
+
 COMPUTE_METHOD = {"func": compute_metrics_for_label}
+
 
 @dataclass
 class ComputeLabelMetrics:
     tokenizer: "PreTrainedTokenizer"
-    
+
     def __call__(self, eval_preds: "EvalPrediction") -> Dict[str, float]:
         preds, labels = eval_preds.predictions, eval_preds.label_ids
         accuracies = []
         for i in range(len(preds)):
             pred, label = preds[i, :-1], labels[i, 1:]
             label_mask = label != IGNORE_INDEX
-            decoded_preds = self.tokenizer.batch_decode(pred[label_mask], skip_special_tokens=True)
-            decoded_labels = self.tokenizer.batch_decode(label[label_mask], skip_special_tokens=True)
+            decoded_preds = self.tokenizer.batch_decode(
+                pred[label_mask], skip_special_tokens=True
+            )
+            decoded_labels = self.tokenizer.batch_decode(
+                label[label_mask], skip_special_tokens=True
+            )
             func = COMPUTE_METHOD["func"]
-            accuracies.append(np.mean(func("".join(decoded_preds), "".join(decoded_labels))))
+            accuracies.append(
+                np.mean(func("".join(decoded_preds), "".join(decoded_labels)))
+            )
         return {"accuracy": float(np.mean(accuracies))}
+
 
 @dataclass
 class ComputeMetrics:
@@ -109,8 +121,15 @@ class ComputeMetrics:
             hypothesis = list(jieba.cut(pred))
             reference = list(jieba.cut(label))
 
-            if len(" ".join(hypothesis).split()) == 0 or len(" ".join(reference).split()) == 0:
-                result = {"rouge-1": {"f": 0.0}, "rouge-2": {"f": 0.0}, "rouge-l": {"f": 0.0}}
+            if (
+                len(" ".join(hypothesis).split()) == 0
+                or len(" ".join(reference).split()) == 0
+            ):
+                result = {
+                    "rouge-1": {"f": 0.0},
+                    "rouge-2": {"f": 0.0},
+                    "rouge-l": {"f": 0.0},
+                }
             else:
                 rouge = Rouge()
                 scores = rouge.get_scores(" ".join(hypothesis), " ".join(reference))
@@ -119,7 +138,11 @@ class ComputeMetrics:
             for k, v in result.items():
                 score_dict[k].append(round(v["f"] * 100, 4))
 
-            bleu_score = sentence_bleu([list(label)], list(pred), smoothing_function=SmoothingFunction().method3)
+            bleu_score = sentence_bleu(
+                [list(label)],
+                list(pred),
+                smoothing_function=SmoothingFunction().method3,
+            )
             score_dict["bleu-4"].append(round(bleu_score * 100, 4))
 
         return {k: float(np.mean(v)) for k, v in score_dict.items()}

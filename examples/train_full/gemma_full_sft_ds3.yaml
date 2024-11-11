@@ -41,3 +41,4 @@ ddp_timeout: 180000000
 per_device_eval_batch_size: 1
 eval_strategy: steps
 eval_steps: 5
+eval_on_start: true
