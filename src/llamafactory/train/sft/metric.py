@@ -146,3 +146,43 @@ class ComputeMetrics:
             score_dict["bleu-4"].append(round(bleu_score * 100, 4))
 
         return {k: float(np.mean(v)) for k, v in score_dict.items()}
+
+@dataclass
+class ComputeBoolMetrics:
+    r"""
+    Wraps the tokenizer into metric functions, used in Seq2SeqPeftTrainer.
+    """
+
+    tokenizer: "PreTrainedTokenizer"
+
+    def __call__(self, eval_preds: "EvalPrediction") -> Dict[str, float]:
+        r"""
+        Uses the model predictions to compute metrics.
+        """
+        preds, labels = eval_preds.predictions, eval_preds.label_ids
+        score_dict = {"TP": 0, "FN": 0, "FP": 0, "TN": 0, "P":0.0,"R":0.0,"F1":0.0,"acc": 0.0}
+
+        preds = np.where(preds != IGNORE_INDEX, preds, self.tokenizer.pad_token_id)
+        labels = np.where(labels != IGNORE_INDEX, labels, self.tokenizer.pad_token_id)
+
+        decoded_preds = self.tokenizer.batch_decode(preds, skip_special_tokens=True)
+        decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
+
+        for pred, label in zip(decoded_preds, decoded_labels):
+            print(pred,label)
+            if label.lower() == "true":
+                if pred.lower() == "true":
+                    score_dict["TP"] += 1
+                else:
+                    score_dict["FN"] += 1
+            else:
+                if pred.lower() == "true":
+                    score_dict["FP"] += 1
+                else:
+                    score_dict["TN"] += 1
+        
+        score_dict["P"] = score_dict["TP"] / (score_dict["TP"] + score_dict["FP"]) if score_dict["TP"] + score_dict["FP"] != 0 else 0
+        score_dict["R"] = score_dict["TP"] / (score_dict["TP"] + score_dict["FN"]) if score_dict["TP"] + score_dict["FN"] != 0 else 0
+        score_dict["F1"] = 2 * score_dict["P"] * score_dict["R"] / (score_dict["P"] + score_dict["R"]) if score_dict["P"] + score_dict["R"] != 0 else 0
+        score_dict["acc"] = (score_dict["TP"] + score_dict["TN"]) / (score_dict["TP"] + score_dict["FN"] + score_dict["FP"] + score_dict["TN"]) if score_dict["TP"] + score_dict["FN"] + score_dict["FP"] + score_dict["TN"] != 0 else 0
+        return score_dict

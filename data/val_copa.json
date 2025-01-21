@@ -1,0 +1,602 @@
+[
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The girl wanted to wear earrings.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>She got her ears pierced.</Action 1><Action 2>She got a tattoo.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The friends decided to share the hamburger.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>They cut the hamburger in half.</Action 1><Action 2>They ordered fries with the hamburger.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I decided to stay home for the night.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The forecast called for storms.</Action 1><Action 2>My friends urged me to go out.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>My view of the movie screen was blocked.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The couple behind me was whispering.</Action 1><Action 2>A tall person was sitting in front of me.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>My closet was messy.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>I organized it.</Action 1><Action 2>I decorated it.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>Plans were announced to replace a local park with a shopping mall.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>Environmentalists started a petition.</Action 1><Action 2>Environmentalists produced a documentary.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman was in a bad mood.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>She engaged in small talk with her friend.</Action 1><Action 2>She told her friend to leave her alone.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The politician was convicted of fraud.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>He campaigned for re-election.</Action 1><Action 2>He was removed from office.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man confessed his love for the woman.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The woman rejected him.</Action 1><Action 2>The woman envied him.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man fainted.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>He took a nap.</Action 1><Action 2>He ran a marathon.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The bowling ball knocked over the bowling pins.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The man rolled the bowling ball down the alley.</Action 1><Action 2>The man dropped the bowling ball on his foot.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man won the lottery.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>He became rich.</Action 1><Action 2>He owed money.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The airline mishandled my luggage.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>They offered me compensation.</Action 1><Action 2>They cancelled my flight.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The player caught the ball.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>Her teammate threw it to her.</Action 1><Action 2>Her opponent tried to intercept it.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The chef hit the egg on the side of the bowl.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The egg cracked.</Action 1><Action 2>The egg rotted.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The pair of students came under scrutiny by the teacher.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The students both received excellent grades.</Action 1><Action 2>Their responses on the assignment were identical.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman retired.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>She received her pension.</Action 1><Action 2>She paid off her mortgage.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The kidnappers released the hostage.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>They accepted ransom money.</Action 1><Action 2>They escaped from jail.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I pressed my hand into the wet cement.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>My handprint dried in the cement.</Action 1><Action 2>Cracks emerged in the cement.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman ran her finger under cold water.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>She burned her finger on the toaster.</Action 1><Action 2>She put a diamond ring on her finger.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman was arrested.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>She checked into rehab.</Action 1><Action 2>She committed assault.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The girl found a bug in her cereal.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>She poured milk in the bowl.</Action 1><Action 2>She lost her appetite.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I lit the candle.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>Wax dripped off the candle.</Action 1><Action 2>The wax on the candle hardened.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman walked with crutches.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>She shaved her legs.</Action 1><Action 2>She broke her leg.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I twisted the cap off the soda bottle.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The soda fizzed.</Action 1><Action 2>The soda leaked out.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The boy threw a temper tantrum.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>His brother took his toys from him.</Action 1><Action 2>He shared his toys with his brother.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I wanted to conserve energy.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>I swept the floor in the unoccupied room.</Action 1><Action 2>I shut off the light in the unoccupied room.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The couple got engaged.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>They planned a wedding.</Action 1><Action 2>They took some time apart.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man felt obligated to attend the event.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>He turned down his friend's invitation to go.</Action 1><Action 2>He promised his friend that he would go.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man dressed in his best suit.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>He scheduled a meeting with an important client.</Action 1><Action 2>His wife bought him a new tie.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman asked the man to leave.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>He insulted her.</Action 1><Action 2>He thanked her.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>Everyone in the class turned to stare at the student.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The student's phone rang.</Action 1><Action 2>The student took notes.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The jewelry thieves were caught.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The stolen jewelry was returned to its owners.</Action 1><Action 2>The cost of the stolen jewelry was calculated.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The journalist wrote a biography about the humanitarian's life.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The humanitarian was difficult for the journalist to interview.</Action 1><Action 2>The journalist was intrigued by the humanitarian's work.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The secretary put the caller on hold.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The caller's phone lost reception.</Action 1><Action 2>The caller waited on the line.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The teacher assigned homework to the students.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The students passed notes.</Action 1><Action 2>The students groaned.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The student was in a rush to get to school on time.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>He left his assignment at home.</Action 1><Action 2>He brought his lunch to school.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The student forgot to do her assignment.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>She made up an excuse to tell the teacher.</Action 1><Action 2>The teacher promoted her to the next grade.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man drank heavily at the party.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>He had a headache the next day.</Action 1><Action 2>He had a runny nose the next day.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I stayed up late.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>I had vivid dreams that night.</Action 1><Action 2>I was tired in the morning.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man's pocket jingled as he walked.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>His pocket was filled with coins.</Action 1><Action 2>He sewed the hole in his pocket.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The computer was expensive to fix.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>I got it repaired.</Action 1><Action 2>I bought a new one.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I coughed.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>I inhaled smoke.</Action 1><Action 2>I lowered my voice.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The police searched the offender's car.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>They were trying to elicit a confession.</Action 1><Action 2>They were looking for illegal drugs.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The bride got cold feet before the wedding.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The wedding guests brought gifts.</Action 1><Action 2>She called the wedding off.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The student misspelled the word.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The teacher corrected her.</Action 1><Action 2>The teacher dismissed her.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The tree branch landed in the river.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The branch moved downstream.</Action 1><Action 2>The river's current became stronger.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The animal species became endangered.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>Their habitat was destroyed.</Action 1><Action 2>Their predators went extinct.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>My ears were ringing.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>I went to a museum.</Action 1><Action 2>I went to a concert.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The lobbyist persuaded the legislature to support the bill.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The president vetoed the bill.</Action 1><Action 2>The legislature passed the bill.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The boy skipped dinner.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>His mother cooked his favorite meal.</Action 1><Action 2>He ate a big lunch.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man defied the authorities of the church.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>He donated money to the church.</Action 1><Action 2>He was excommunicated from the church.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The sick child coughed on his friend.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>His friend got sick.</Action 1><Action 2>His friend sneezed.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I pulled the rubber band.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>It flung across the room.</Action 1><Action 2>It stretched.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man received a parking ticket.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>He parallel parked on the street.</Action 1><Action 2>The parking meter expired.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I tidied up my house.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>I was swamped with work.</Action 1><Action 2>I was expecting company.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The driver turned on the car's headlights.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>He heard thunder.</Action 1><Action 2>The sun went down.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman resigned from her job.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>She aspired to hold an executive position in the firm.</Action 1><Action 2>She believed her superiors were acting unethically.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The girl refused to eat her vegetables.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>Her father told her to drink her milk.</Action 1><Action 2>Her father took away her dessert.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman lavished her friend with flattery.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>She wanted to ask her friend for a favor.</Action 1><Action 2>She was irritated with her friend's whining.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man perceived that the woman looked different.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The woman got her hair cut.</Action 1><Action 2>The woman wore a bracelet.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The couple travelled south for the winter.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>They were retired.</Action 1><Action 2>They were separated.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>My skin broke out into a rash.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>I brushed against poison ivy in my yard.</Action 1><Action 2>I eradicated the poison ivy from my yard.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The couple was happy to see each other.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>They kissed.</Action 1><Action 2>They rested.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The driver got a flat tire.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>He went over the speed limit.</Action 1><Action 2>He ran over a nail.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I regained composure from my fit of anger.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>My heart pounded.</Action 1><Action 2>I took deep breaths.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>Political violence broke out in the nation.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>Many citizens relocated to the capitol.</Action 1><Action 2>Many citizens took refuge in other territories.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I put rubber gloves on.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>I was preparing to wash my hands.</Action 1><Action 2>I was preparing to clean the bathroom.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The mother called an ambulance.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>Her son lost his cat.</Action 1><Action 2>Her son fell out of his bed.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman contacted the real estate agent.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The woman planned to buy a condo.</Action 1><Action 2>The woman needed to clean her house.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The seasons changed from summer to autumn.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>People evacuated their homes.</Action 1><Action 2>Leaves fell from the trees.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The ring on my finger got stuck.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>My finger swelled.</Action 1><Action 2>I chipped my fingernail.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The clock chimed.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>It was the top of the hour.</Action 1><Action 2>The hour seemed to drag on.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I pushed the wagon.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The objects in the wagon fell out.</Action 1><Action 2>The wagon wheels spun forward.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The horse bucked.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>A fly bit the horse.</Action 1><Action 2>The rider stroked the horse.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man turned on the faucet.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The toilet filled with water.</Action 1><Action 2>Water flowed from the spout.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The community learned of the man's death.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>His family buried him in the cemetery.</Action 1><Action 2>His obituary appeared in the newspaper.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The flame on the candle went out.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>I blew on the wick.</Action 1><Action 2>I put a match to the wick.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I put my hands under the running faucet.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>The soap rinsed off my hands.</Action 1><Action 2>The water splashed in my face.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The driver slammed on his brakes.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>A deer appeared on the road.</Action 1><Action 2>The car radio shut off.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I spent the day at the pool.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>I sprained my ankle.</Action 1><Action 2>My face got sunburned.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The key was missing from my pants pocket.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The pocket had a hole.</Action 1><Action 2>The pants were new.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman read the newspaper.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>She discovered the outcome of the election.</Action 1><Action 2>She casted a vote in the election.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The lock opened.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>I turned the key in the lock.</Action 1><Action 2>I made a duplicate of the key.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman banished the children from her property.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The children hit a ball into her yard.</Action 1><Action 2>The children trampled through her garden.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The cook's eyes watered.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>He ran out of onions.</Action 1><Action 2>He cut an onion.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman covered her mouth with her hand.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>She exhaled.</Action 1><Action 2>She sneezed.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>My computer crashed.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>I installed new speakers.</Action 1><Action 2>I lost all my data.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The judge pounded the gavel.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The courtroom broke into uproar.</Action 1><Action 2>The jury announced its verdict.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>My subscription to the magazine expired.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>I discarded the new issue.</Action 1><Action 2>I stopped receiving new issues.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man grew old.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>His hair turned gray.</Action 1><Action 2>He sold his belongings.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The child learned how to read.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>He began attending school.</Action 1><Action 2>He skipped a grade in school.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman's hair fell in her face.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>She pulled her hair back with a clip.</Action 1><Action 2>She lathered shampoo into her hair.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The woman became famous.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>Photographers followed her.</Action 1><Action 2>Her family avoided her.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>I doubted the salesman's pitch.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>I turned his offer down.</Action 1><Action 2>He persuaded me to buy the product.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The dog barked.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The cat lounged on the couch.</Action 1><Action 2>A knock sounded at the door.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The hamburger meat browned.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The cook froze it.</Action 1><Action 2>The cook grilled it.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The man lost the competition.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>The competition was sabotaged.</Action 1><Action 2>He intimidated his competitors.</Action 2>",
+        "output": 1
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>The detective revealed an anomaly in the case.</Description>\nCausal Relationship:<Causal Relationship>effect</Causal Relationship>\nBelow are the two possible actions:<Action 1>He finalized his theory.</Action 1><Action 2>He scrapped his theory.</Action 2>",
+        "output": 2
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "You will take a common sense reasoning task. In this task, you need to determine which of the two possible actions led to the given cause or effect based on the provided description and causal relationship. Only output the action number.",
+        "input": "<Description>My eyes became red and puffy.</Description>\nCausal Relationship:<Causal Relationship>cause</Causal Relationship>\nBelow are the two possible actions:<Action 1>I was sobbing.</Action 1><Action 2>I was laughing.</Action 2>",
+        "output": 1
+    }
+]

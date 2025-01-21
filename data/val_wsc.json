@@ -1,0 +1,602 @@
+[
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Bill passed the half-empty plate to John because he was hungry.</sentence>\nHere is the noun:<noun>Bill</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album . Today she had to hunt for a button , so she put the album on a chair without even opening it .</sentence>\nHere is the noun:<noun>chair</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The storekeepers stayed in town to run their stores and lived in the rooms behind them .</sentence>\nHere is the noun:<noun>rooms</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Always before, Larry had helped Dad with his work. But he could not help him now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office.</sentence>\nHere is the noun:<noun>Larry</noun>\nHere is the pronoun:<pronoun>him</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The customer walked into the bank and stabbed one of the tellers. He was immediately taken to the police station.</sentence>\nHere is the noun:<noun>The customer</noun>\nHere is the pronoun:<pronoun>He</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album . Today she had to hunt for a button , so she put the album on a chair without even opening it .</sentence>\nHere is the noun:<noun>album</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Joe Joe's uncle can still beat him at tennis, even though he is 30 years older.</sentence>\nHere is the noun:<noun>Joe</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Bill passed the half-empty plate to John because he was full.</sentence>\nHere is the noun:<noun>John</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that he no longer requires his financial support.</sentence>\nHere is the noun:<noun>Mr. Moncrieff</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Every day after dinner Mr. Schmidt took a long nap. Mark would let him sleep for an hour, then wake him up, scold him, and get him to work. He needed to get him to finish his work, because his work was beautiful</sentence>\nHere is the noun:<noun>Mark</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Joe Joe's uncle can still beat him at tennis, even though he is 30 years younger.</sentence>\nHere is the noun:<noun>Joe</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Since Chester was dependent on Uncle Vernon , he couldn't very well marry without his approval</sentence>\nHere is the noun:<noun>Uncle Vernon</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that they had to be denied so many things because he couldn't afford them.</sentence>\nHere is the noun:<noun>faces</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>I tried to paint a picture of an orchard, with lemons in the lemon trees , but they came out looking more like light bulbs.</sentence>\nHere is the noun:<noun>lemons</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise.</sentence>\nHere is the noun:<noun>the master</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The large ball crashed right through the table because it was made of styrofoam.</sentence>\nHere is the noun:<noun>The large ball</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>I tried to paint a picture of an orchard, with lemons in the lemon trees , but they came out looking more like light bulbs.</sentence>\nHere is the noun:<noun>lemon trees</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Since Chester was dependent on Uncle Vernon , he couldn't very well marry without his approval</sentence>\nHere is the noun:<noun>Chester</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Every day after dinner Mr. Schmidt took a long nap. Mark would let him sleep for an hour, then wake him up, scold him, and get him to work. He needed to get him to finish his work, because his work was beautiful</sentence>\nHere is the noun:<noun>Mr. Schmidt</noun>\nHere is the pronoun:<pronoun>He</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that they had to be denied so many things because he couldn't afford them .</sentence>\nHere is the noun:<noun>children</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because they are fifteen.</sentence>\nHere is the noun:<noun>Sam and Amy</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>While Nancy and Ellen counted the silverware, Mrs. Smith hastened upstairs. In a few minutes she returned and one look at her stricken face told the girls that the precious map was gone.</sentence>\nHere is the noun:<noun>Nancy</noun>\nHere is the pronoun:<pronoun>her</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album . Today she had to hunt for a button , so she put the album on a chair without even opening it .</sentence>\nHere is the noun:<noun>button</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The large ball crashed right through the table because it was made of styrofoam.</sentence>\nHere is the noun:<noun>the table</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Well satisfied with his purchases and feeling very elegant indeed, Babar goes to the photographer to have his picture taken.</sentence>\nHere is the noun:<noun>the photographer</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Always before, Larry had helped Dad with his work. But he could not help him now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office.</sentence>\nHere is the noun:<noun>Larry</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Well satisfied with his purchases and feeling very elegant indeed, Babar goes to the photographer to have his picture taken.</sentence>\nHere is the noun:<noun>the photographer</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Fred watched TV while George went out to buy groceries. After an hour he got back.</sentence>\nHere is the noun:<noun>George</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that he no longer requires his financial support.</sentence>\nHere is the noun:<noun>Chester</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Joe Joe's uncle can still beat him at tennis, even though he is 30 years older.</sentence>\nHere is the noun:<noun>Joe's uncle</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and their mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen them and come back quickly to tell the news.</sentence>\nHere is the noun:<noun>Arthur and Celeste</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Jane gave Joan candy because she wasn't hungry.</sentence>\nHere is the noun:<noun>Joan</noun>\nHere is the pronoun:<pronoun>she</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him .</sentence>\nHere is the noun:<noun>anyone</noun>\nHere is the pronoun:<pronoun>him</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>While Nancy and Ellen counted the silverware, Mrs. Smith hastened upstairs. In a few minutes she returned and one look at her stricken face told the girls that the precious map was gone.</sentence>\nHere is the noun:<noun>Ellen</noun>\nHere is the pronoun:<pronoun>her</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise.</sentence>\nHere is the noun:<noun>the master</noun>\nHere is the pronoun:<pronoun>him</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise.</sentence>\nHere is the noun:<noun>Dick</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and their mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen them and come back quickly to tell the news.</sentence>\nHere is the noun:<noun>the elephants</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that he no longer requires his financial support.</sentence>\nHere is the noun:<noun>Mr. Moncrieff</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Always before, Larry had helped Dad with his work. But he could not help him now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office.</sentence>\nHere is the noun:<noun>Dad</noun>\nHere is the pronoun:<pronoun>him</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Since Chester was dependent on Uncle Vernon , he couldn't very well marry without his approval</sentence>\nHere is the noun:<noun>Uncle Vernon</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The path to the lake was blocked, so we couldn't reach it .</sentence>\nHere is the noun:<noun>The path</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise.</sentence>\nHere is the noun:<noun>Dick</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The path to the lake was blocked, so we couldn't use it .</sentence>\nHere is the noun:<noun>The path</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because they are snobs.</sentence>\nHere is the noun:<noun>Amy's parents</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Everyone really loved the oatmeal cookies ; only a few people liked the chocolate chip cookies . Next time, we should make more of them .</sentence>\nHere is the noun:<noun>the chocolate chip cookies</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Always before, Larry had helped Dad with his work. But he could not help him now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office.</sentence>\nHere is the noun:<noun>Larry</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The customer walked into the bank and stabbed one of the tellers. He was immediately taken to the hospital.</sentence>\nHere is the noun:<noun>The customer</noun>\nHere is the pronoun:<pronoun>He</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that they had to be denied so many things because he couldn't afford them.</sentence>\nHere is the noun:<noun>children</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The stable was very roomy, with four good stalls; a large swinging window opened into the yard , which made it pleasant and airy.</sentence>\nHere is the noun:<noun>window</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Jane gave Joan candy because she was hungry.</sentence>\nHere is the noun:<noun>Joan</noun>\nHere is the pronoun:<pronoun>she</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that he no longer requires his financial support.</sentence>\nHere is the noun:<noun>Edward</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Jane gave Joan candy because she was hungry.</sentence>\nHere is the noun:<noun>Jane</noun>\nHere is the pronoun:<pronoun>she</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>When they had eventually calmed down a bit , and had gotten home, Mr. Farley put the magic pebble in an iron safe . Some day they might want to use it , but really for now, what more could they wish for?</sentence>\nHere is the noun:<noun>safe</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The path to the lake was blocked, so we couldn't use it .</sentence>\nHere is the noun:<noun>the lake</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him.</sentence>\nHere is the noun:<noun>Bernard</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that they had to be denied so many things because he couldn't afford them .</sentence>\nHere is the noun:<noun>faces</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Since Chester was dependent on Uncle Vernon , he couldn't very well marry without his approval</sentence>\nHere is the noun:<noun>Chester</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The stable was very roomy, with four good stalls; a large swinging window opened into the yard , which made it pleasant and airy.</sentence>\nHere is the noun:<noun>stable</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Larry , a timid teen-ager, lives with his widowed mother in a Brooklyn housing project. Larry Larry's father , a gang leader, was shot to death; his father's disciple, Antonio , takes Larry under his wing, and quickly molds him into a drug runner.</sentence>\nHere is the noun:<noun>Antonio</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise.</sentence>\nHere is the noun:<noun>the master</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The storekeepers stayed in town to run their stores and lived in the rooms behind them .</sentence>\nHere is the noun:<noun>stores</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Fred watched TV while George went out to buy groceries. After an hour he got up.</sentence>\nHere is the noun:<noun>Fred</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The large ball crashed right through the table because it was made of steel.</sentence>\nHere is the noun:<noun>The large ball</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and their mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen them and come back quickly to tell the news.</sentence>\nHere is the noun:<noun>the elephants</noun>\nHere is the pronoun:<pronoun>their</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Men had the right to keep their sons working for them until they were 21 years of age.</sentence>\nHere is the noun:<noun>Men</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because they are fifteen.</sentence>\nHere is the noun:<noun>Amy's parents</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise.</sentence>\nHere is the noun:<noun>the master</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Every day after dinner Mr. Schmidt took a long nap. Mark would let him sleep for an hour, then wake him up, scold him, and get him to work. He needed to get him to finish his work, because his work was beautiful</sentence>\nHere is the noun:<noun>Mark</noun>\nHere is the pronoun:<pronoun>He</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Fred watched TV while George went out to buy groceries. After an hour he got up.</sentence>\nHere is the noun:<noun>George</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album. Today she had to hunt for a button, so she put the album on a chair without even opening it.</sentence>\nHere is the noun:<noun>Mama</noun>\nHere is the pronoun:<pronoun>she</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Larry , a timid teen-ager, lives with his widowed mother in a Brooklyn housing project. Larry Larry's father , a gang leader, was shot to death; his father's disciple, Antonio , takes Larry under his wing, and quickly molds him into a drug runner.</sentence>\nHere is the noun:<noun>Larry's father</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Always before, Larry had helped Dad with his work. But he could not help him now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office.</sentence>\nHere is the noun:<noun>Dad</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The stable was very roomy, with four good stalls; a large swinging window opened into the yard , which made it pleasant and airy.</sentence>\nHere is the noun:<noun>yard</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Larry , a timid teen-ager, lives with his widowed mother in a Brooklyn housing project. Larry Larry's father , a gang leader, was shot to death; his father's disciple, Antonio , takes Larry under his wing, and quickly molds him into a drug runner.</sentence>\nHere is the noun:<noun>Larry</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Patting her back, the woman smiled at the girl .</sentence>\nHere is the noun:<noun>the woman</noun>\nHere is the pronoun:<pronoun>her</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Mr. Moncrieff visited Chester 's luxurious New York apartment, thinking that it belonged to his son Edward . The result was that Mr. Moncrieff has decided to cancel Edward 's allowance on the ground that he no longer requires his financial support.</sentence>\nHere is the noun:<noun>Edward</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Joe Joe's uncle can still beat him at tennis, even though he is 30 years younger.</sentence>\nHere is the noun:<noun>Joe's uncle</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and their mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen them and come back quickly to tell the news.</sentence>\nHere is the noun:<noun>their mothers</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise.</sentence>\nHere is the noun:<noun>Dick</noun>\nHere is the pronoun:<pronoun>him</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The path to the lake was blocked, so we couldn't reach it .</sentence>\nHere is the noun:<noun>the lake</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Sam and Amy are passionately in love, but Amy's parents are unhappy about it, because they are snobs.</sentence>\nHere is the noun:<noun>Sam and Amy</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>I tried to paint a picture of an orchard, with lemons in the lemon trees , but they came out looking more like light bulbs.</sentence>\nHere is the noun:<noun>lemon trees</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him.</sentence>\nHere is the noun:<noun>Bernard</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Fred watched TV while George went out to buy groceries. After an hour he got back.</sentence>\nHere is the noun:<noun>Fred</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him.</sentence>\nHere is the noun:<noun>the government official</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>One day Dick was teasing the colts, and did not know that the master was in the next field; but he was there, watching what was going on; over the hedge he jumped in a snap, and catching Dick by the arm, he hit him so hard that he roared with the pain and surprise.</sentence>\nHere is the noun:<noun>Dick</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him.</sentence>\nHere is the noun:<noun>the government official</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Mr. Taylor was a man of uncertain temper and his general tendency was to think that David was a poor chump and that whatever step he took in any direction on his own account was just another proof of his innate idiocy,</sentence>\nHere is the noun:<noun>Mr. Taylor</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>The storekeepers stayed in town to run their stores and lived in the rooms behind them .</sentence>\nHere is the noun:<noun>storekeepers</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album . Today she had to hunt for a button , so she put the album on a chair without even opening it .</sentence>\nHere is the noun:<noun>living room</noun>\nHere is the pronoun:<pronoun>it</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Everyone really loved the oatmeal cookies ; only a few people liked the chocolate chip cookies . Next time, we should make more of them .</sentence>\nHere is the noun:<noun>the oatmeal cookies</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him .</sentence>\nHere is the noun:<noun>the government official</noun>\nHere is the pronoun:<pronoun>him</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Every day after dinner Mr. Schmidt took a long nap. Mark would let him sleep for an hour, then wake him up, scold him, and get him to work. He needed to get him to finish his work, because his work was beautiful</sentence>\nHere is the noun:<noun>Mr. Schmidt</noun>\nHere is the pronoun:<pronoun>his</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Alice was dusting the living room and trying to find the button that Mama had hidden. No time today to look at old pictures in her favorite photo album. Today she had to hunt for a button, so she put the album on a chair without even opening it.</sentence>\nHere is the noun:<noun>Mama</noun>\nHere is the pronoun:<pronoun>her</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Jane gave Joan candy because she wasn't hungry.</sentence>\nHere is the noun:<noun>Jane</noun>\nHere is the pronoun:<pronoun>she</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>I tried to paint a picture of an orchard, with lemons in the lemon trees , but they came out looking more like light bulbs.</sentence>\nHere is the noun:<noun>lemons</noun>\nHere is the pronoun:<pronoun>they</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Papa looked down at the children 's faces , so puzzled and sad now. It was bad enough that they had to be denied so many things because he couldn't afford them .</sentence>\nHere is the noun:<noun>things</noun>\nHere is the pronoun:<pronoun>them</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Meanwhile, in the forest, the elephants are calling and hunting high and low for Arthur and Celeste , and their mothers are very worried. Fortunately, in flying over the town, an old marabou bird has seen them and come back quickly to tell the news.</sentence>\nHere is the noun:<noun>Arthur and Celeste</noun>\nHere is the pronoun:<pronoun>their</pronoun>",
+        "output": "true"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Then Dad figured out how much the man owed the store; to that he added the man 's board-bill at the cook-shanty. He subtracted that amount from the man 's wages, and made out his check</sentence>\nHere is the noun:<noun>the man</noun>\nHere is the pronoun:<pronoun>He</pronoun>",
+        "output": "false"
+    },
+    {
+        "system": "You are a helpful assistant.",
+        "instruction": "Your task is to perform pronoun disambiguation. I will give you a sentence along with a noun and a pronoun in the sentence, and you need to determine if the pronoun matches the noun in the sentence. Only output ture or false.",
+        "input": "Here is the sentence:<sentence>Always before, Larry had helped Dad with his work. But he could not help him now, for Dad said that his boss at the railroad company would not want anyone but him to work in the office.</sentence>\nHere is the noun:<noun>Dad</noun>\nHere is the pronoun:<pronoun>he</pronoun>",
+        "output": "false"
+    }
+]

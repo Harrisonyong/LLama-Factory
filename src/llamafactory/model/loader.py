@@ -17,6 +17,7 @@ from typing import TYPE_CHECKING, Any, Dict, Optional, TypedDict
 import torch
 from transformers import AutoConfig, AutoModelForCausalLM, AutoModelForVision2Seq, AutoProcessor, AutoTokenizer
 from trl import AutoModelForCausalLMWithValueHead
+from peft import AutoPeftModelForCausalLM
 
 from ..extras.logging import get_logger
 from ..extras.misc import count_parameters, skip_check_imports, try_download_model_from_ms
@@ -150,7 +151,10 @@ def load_model(
         elif model_args.train_from_scratch:
             model = AutoModelForCausalLM.from_config(config)
         else:
-            model = AutoModelForCausalLM.from_pretrained(**init_kwargs)
+            if model_args.peft_model:
+                model = AutoPeftModelForCausalLM.from_pretrained(model_args.model_name_or_path)
+            else:
+                model = AutoModelForCausalLM.from_pretrained(**init_kwargs)
 
         if model_args.mixture_of_depths == "convert":
             model = convert_pretrained_model_to_mod(model, config, model_args)
