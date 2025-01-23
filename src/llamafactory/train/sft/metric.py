@@ -160,60 +160,100 @@ class ComputeBoolMetrics:
         Uses the model predictions to compute metrics.
         """
         preds, labels = eval_preds.predictions, eval_preds.label_ids
-        score_dict = {"boolq": {}, "copa": {}, "gsm": {}, "multirc": {}, "rte":{},"squad":{},"sst2":{}, "wic": {},"wsc": {}}
+        score_dict = {"TP": 0, "FN": 0, "FP": 0, "TN": 0, "P":0.0,"R":0.0,"F1":0.0,"acc": 0.0}
 
         preds = np.where(preds != IGNORE_INDEX, preds, self.tokenizer.pad_token_id)
         labels = np.where(labels != IGNORE_INDEX, labels, self.tokenizer.pad_token_id)
 
         decoded_preds = self.tokenizer.batch_decode(preds, skip_special_tokens=True)
         decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
-        i = 0
-        name="boolq"
+
         for pred, label in zip(decoded_preds, decoded_labels):
-            if i == 0: 
-                name="boolq"
-                print(name)
-            elif i == 1000: 
-                name="copa"
-                print(name)
-            elif i == 1100: 
-                name="gsm"
-                print(name)
-            elif i == 2100: 
-                name="multirc"
-                print(name)
-            elif i == 3100: 
-                name="rte"
-                print(name)
-            elif i == 3300: 
-                name="squad"
-                print(name)
-            elif i == 4300: 
-                name="sst2"
-                print(name)
-            elif i == 5100: 
-                name="wic"
-                print(name)
-            elif i == 5700: 
-                name="wsc"
-                print(name)
-            i += 1
-            print(pred,label)
-            data = score_dict[name]
+            print('pred:'+pred,'label:'+label)
             if label.lower() == "true":
                 if pred.lower() == "true":
-                    data["TP"] += 1
+                    score_dict["TP"] += 1
                 else:
-                    data["FN"] += 1
+                    score_dict["FN"] += 1
             else:
                 if pred.lower() == "true":
-                    data["FP"] += 1
+                    score_dict["FP"] += 1
                 else:
-                    data["TN"] += 1
+                    score_dict["TN"] += 1
         
-            data["P"] = data["TP"] / (data["TP"] + data["FP"]) if data["TP"] + data["FP"] != 0 else 0
-            data["R"] = data["TP"] / (data["TP"] + data["FN"]) if data["TP"] + data["FN"] != 0 else 0
-            data["F1"] = 2 * data["P"] * data["R"] / (data["P"] + data["R"]) if data["P"] + data["R"] != 0 else 0
-            data["acc"] = (data["TP"] + data["TN"]) / (data["TP"] + data["FN"] + data["FP"] + data["TN"]) if data["TP"] + data["FN"] + data["FP"] + data["TN"] != 0 else 0
+        score_dict["P"] = score_dict["TP"] / (score_dict["TP"] + score_dict["FP"]) if score_dict["TP"] + score_dict["FP"] != 0 else 0
+        score_dict["R"] = score_dict["TP"] / (score_dict["TP"] + score_dict["FN"]) if score_dict["TP"] + score_dict["FN"] != 0 else 0
+        score_dict["F1"] = 2 * score_dict["P"] * score_dict["R"] / (score_dict["P"] + score_dict["R"]) if score_dict["P"] + score_dict["R"] != 0 else 0
+        score_dict["acc"] = (score_dict["TP"] + score_dict["TN"]) / (score_dict["TP"] + score_dict["FN"] + score_dict["FP"] + score_dict["TN"]) if score_dict["TP"] + score_dict["FN"] + score_dict["FP"] + score_dict["TN"] != 0 else 0
+        
+        return score_dict
+    
+@dataclass
+class ComputeEqualMetrics:
+    r"""
+    Wraps the tokenizer into metric functions, used in Seq2SeqPeftTrainer.
+    """
+
+    tokenizer: "PreTrainedTokenizer"
+
+    def __call__(self, eval_preds: "EvalPrediction") -> Dict[str, float]:
+        r"""
+        Uses the model predictions to compute metrics.
+        """
+        preds, labels = eval_preds.predictions, eval_preds.label_ids
+        score_dict = {"TP": 0, "FN": 0, "FP": 0, "TN": 0, "P":0.0,"R":0.0,"F1":0.0,"acc": 0.0}
+
+        preds = np.where(preds != IGNORE_INDEX, preds, self.tokenizer.pad_token_id)
+        labels = np.where(labels != IGNORE_INDEX, labels, self.tokenizer.pad_token_id)
+
+        decoded_preds = self.tokenizer.batch_decode(preds, skip_special_tokens=True)
+        decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
+
+        for pred, label in zip(decoded_preds, decoded_labels):
+            print('pred:'+pred,'label:'+label)
+            if label.lower() == pred.lower():
+                score_dict["TP"] += 1
+            else:
+                score_dict["FN"] += 1
+        
+        score_dict["P"] = score_dict["TP"] / (score_dict["TP"] + score_dict["FP"]) if score_dict["TP"] + score_dict["FP"] != 0 else 0
+        score_dict["R"] = score_dict["TP"] / (score_dict["TP"] + score_dict["FN"]) if score_dict["TP"] + score_dict["FN"] != 0 else 0
+        score_dict["F1"] = 2 * score_dict["P"] * score_dict["R"] / (score_dict["P"] + score_dict["R"]) if score_dict["P"] + score_dict["R"] != 0 else 0
+        score_dict["acc"] = (score_dict["TP"] + score_dict["TN"]) / (score_dict["TP"] + score_dict["FN"] + score_dict["FP"] + score_dict["TN"]) if score_dict["TP"] + score_dict["FN"] + score_dict["FP"] + score_dict["TN"] != 0 else 0
+        
+        return score_dict
+    
+@dataclass
+class ComputeRegularMetrics:
+    r"""
+    Wraps the tokenizer into metric functions, used in Seq2SeqPeftTrainer.
+    """
+
+    tokenizer: "PreTrainedTokenizer"
+
+    def __call__(self, eval_preds: "EvalPrediction") -> Dict[str, float]:
+        r"""
+        Uses the model predictions to compute metrics.
+        """
+        preds, labels = eval_preds.predictions, eval_preds.label_ids
+        score_dict = {"TP": 0, "FN": 0, "FP": 0, "TN": 0, "P":0.0,"R":0.0,"F1":0.0,"acc": 0.0}
+
+        preds = np.where(preds != IGNORE_INDEX, preds, self.tokenizer.pad_token_id)
+        labels = np.where(labels != IGNORE_INDEX, labels, self.tokenizer.pad_token_id)
+
+        decoded_preds = self.tokenizer.batch_decode(preds, skip_special_tokens=True)
+        decoded_labels = self.tokenizer.batch_decode(labels, skip_special_tokens=True)
+
+        for pred, label in zip(decoded_preds, decoded_labels):
+            print('pred:'+pred,'label:'+label)
+            if re.search(r'\b' + re.escape(label) + r'\b', pred, re.IGNORECASE):
+                score_dict["TP"] += 1
+            else:
+                score_dict["FN"] += 1
+        
+        score_dict["P"] = score_dict["TP"] / (score_dict["TP"] + score_dict["FP"]) if score_dict["TP"] + score_dict["FP"] != 0 else 0
+        score_dict["R"] = score_dict["TP"] / (score_dict["TP"] + score_dict["FN"]) if score_dict["TP"] + score_dict["FN"] != 0 else 0
+        score_dict["F1"] = 2 * score_dict["P"] * score_dict["R"] / (score_dict["P"] + score_dict["R"]) if score_dict["P"] + score_dict["R"] != 0 else 0
+        score_dict["acc"] = (score_dict["TP"] + score_dict["TN"]) / (score_dict["TP"] + score_dict["FN"] + score_dict["FP"] + score_dict["TN"]) if score_dict["TP"] + score_dict["FN"] + score_dict["FP"] + score_dict["TN"] != 0 else 0
         
         return score_dict

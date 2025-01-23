@@ -23,7 +23,7 @@ from ...extras.misc import get_logits_processor
 from ...extras.ploting import plot_loss
 from ...model import load_model, load_tokenizer
 from ..trainer_utils import create_modelcard_and_push
-from .metric import ComputeMetrics, ComputeBoolMetrics, ComputeLabelMetrics,compute_accuracy, eval_logit_processor
+from .metric import ComputeMetrics, ComputeBoolMetrics, ComputeEqualMetrics, ComputeRegularMetrics, ComputeLabelMetrics,compute_accuracy, eval_logit_processor
 from .trainer import CustomSeq2SeqTrainer
 
 
@@ -77,7 +77,7 @@ def run_sft(
             train_dataset = dataset,
             eval_dataset = val_dataset,
             callbacks=callbacks,
-            compute_metrics=ComputeBoolMetrics(tokenizer),
+            compute_metrics=ComputeRegularMetrics(tokenizer),
             preprocess_logits_for_metrics=None if training_args.predict_with_generate else eval_logit_processor,
             **tokenizer_module,
         )

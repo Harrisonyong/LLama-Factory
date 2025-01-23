@@ -1,6 +1,6 @@
 {
   "train_all": {
-    "file_name": "train",
+    "file_name": "train/train_squad.json",
     "columns": {
       "prompt": "instruction",
       "query": "input",
@@ -9,7 +9,7 @@
     }
   },
   "val_all": {
-    "file_name": "validation",
+    "file_name": "validation/val_squad.json",
     "columns": {
       "prompt": "instruction",
       "query": "input",
