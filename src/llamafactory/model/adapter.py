@@ -17,7 +17,6 @@ from typing import TYPE_CHECKING
 
 import torch
 from peft import LoraConfig, LoraModel, PeftModel, TaskType, get_peft_model
-
 from transformers.integrations import is_deepspeed_zero3_enabled
 from transformers.modeling_utils import is_fsdp_enabled
 
@@ -25,9 +24,7 @@ from ..extras.logging import get_logger
 from .model_utils.misc import find_all_linear_modules, find_expanded_modules
 from .model_utils.quantization import QuantizationMethod
 from .model_utils.unsloth import get_unsloth_peft_model, load_unsloth_peft_model
-from .EB_peft import TaskType as EB_TaskType
-from .EB_peft import get_peft_model as EB_get_peft_model
-from .EB_peft import ExpertBasedPromptConfig
+
 
 if TYPE_CHECKING:
     from transformers import PretrainedConfig, PreTrainedModel
@@ -269,72 +266,6 @@ def _setup_lora_tuning(
 
     return model
 
-def _setup_eb_tuning(
-    config: "PretrainedConfig",
-    model: "PreTrainedModel",
-    model_args: "ModelArguments",
-    finetuning_args: "FinetuningArguments",
-    is_trainable: bool,
-    cast_trainable_params_to_fp32: bool,
-) -> "PeftModel":
-    if is_trainable:
-        logger.info("Fine-tuning method: {}".format(finetuning_args.finetuning_type))
-
-    adapter_to_resume = None
-    
-    if model_args.adapter_name_or_path is not None:
-        is_mergeable = True
-        if (is_trainable and not finetuning_args.create_new_adapter) or (not is_mergeable):
-            adapter_to_merge = model_args.adapter_name_or_path[:-1]
-            adapter_to_resume = model_args.adapter_name_or_path[-1]
-        else:
-            adapter_to_merge = model_args.adapter_name_or_path
-            
-        init_kwargs = {
-            "subfolder": model_args.adapter_folder,
-            "offload_folder": model_args.offload_folder,
-            "cache_dir": model_args.cache_dir,
-            "revision": model_args.model_revision,
-            "token": model_args.hf_hub_token,
-        }
-        
-        if len(adapter_to_merge) > 0:
-            logger.info("Merged {} adapter(s).".format(len(adapter_to_merge)))
-        
-        if adapter_to_resume is not None:  # resume lora training
-            if model_args.use_unsloth:
-                model = load_unsloth_peft_model(config, model_args, is_trainable=is_trainable)
-            else:
-                model = PeftModel.from_pretrained(model, adapter_to_resume, is_trainable=is_trainable, **init_kwargs)
-        
-        logger.info("Loaded adapter(s): {}".format(",".join(model_args.adapter_name_or_path)))
-    if is_trainable and adapter_to_resume is None:
-        if model_args.resize_vocab and finetuning_args.additional_target is None:
-            input_embeddings = model.get_input_embeddings()
-            output_embeddings = model.get_output_embeddings()
-            module_names = set()
-            for name, module in model.named_modules():
-                if module in [input_embeddings, output_embeddings]:
-                    module_names.add(name.split(".")[-1])
-                    
-            finetuning_args.additional_target = module_names
-            logger.warning("Vocab has been resized, add {} to trainable params.".format(",".join(module_names)))
-
-        peft_kwargs = {
-            "modules_to_save": finetuning_args.additional_target,
-        }
-        Eb_config = ExpertBasedPromptConfig(task_type=TaskType.CAUSAL_LM, 
-                                        num_virtual_tokens=finetuning_args.num_virtual_tokens,
-                                        encoder_hidden_size=finetuning_args.encoder_hidden_size,
-                                        num_experts=finetuning_args.num_experts,
-                                        num_static_experts=finetuning_args.num_static_experts,
-                                        top_k=finetuning_args.E_top_k)
-        model = EB_get_peft_model(model, Eb_config)
-    if is_trainable and cast_trainable_params_to_fp32:
-        for param in filter(lambda p: p.requires_grad, model.parameters()):
-            param.data = param.data.to(torch.float32)
-            
-    return model
 
 def init_adapter(
     config: "PretrainedConfig",
@@ -377,10 +308,6 @@ def init_adapter(
         _setup_freeze_tuning(model, model_args, finetuning_args, is_trainable, cast_trainable_params_to_fp32)
     elif finetuning_args.finetuning_type == "lora":
         model = _setup_lora_tuning(
-            config, model, model_args, finetuning_args, is_trainable, cast_trainable_params_to_fp32
-        )
-    elif finetuning_args.finetuning_type == "EB_tuning":
-        model = _setup_eb_tuning(
             config, model, model_args, finetuning_args, is_trainable, cast_trainable_params_to_fp32
         )
     else:

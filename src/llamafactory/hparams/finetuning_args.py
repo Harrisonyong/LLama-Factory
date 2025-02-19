@@ -305,27 +305,7 @@ class BAdamArgument:
 
 
 @dataclass
-class ExpertBasedPromptArguments:
-    num_virtual_tokens: int = field(default=None, metadata={"help": "Number of virtual tokens"})
-    encoder_hidden_size: int = field(
-        default=None,
-        metadata={"help": "The intermediate size of the expert encoder"},
-    )
-    num_experts: int = field(
-        default=16,
-        metadata={"help": "Toal number of experts"},
-    ) 
-    num_static_experts: int = field(
-        default=1,
-        metadata={"help": "Number of static experts"},
-    )
-    E_top_k: int = field(
-        default=4,
-        metadata={"help": "TopK of exeprts to be choiced"},
-    )
-
-@dataclass
-class FinetuningArguments(FreezeArguments, LoraArguments, RLHFArguments, GaloreArguments, BAdamArgument, ExpertBasedPromptArguments):
+class FinetuningArguments(FreezeArguments, LoraArguments, RLHFArguments, GaloreArguments, BAdamArgument):
     r"""
     Arguments pertaining to which techniques we are going to fine-tuning with.
     """
@@ -338,7 +318,7 @@ class FinetuningArguments(FreezeArguments, LoraArguments, RLHFArguments, GaloreA
         default="sft",
         metadata={"help": "Which stage will be performed in training."},
     )
-    finetuning_type: Literal["lora", "freeze", "full", "EB_tuning"] = field(
+    finetuning_type: Literal["lora", "freeze", "full"] = field(
         default="lora",
         metadata={"help": "Which fine-tuning method to use."},
     )
@@ -374,7 +354,7 @@ class FinetuningArguments(FreezeArguments, LoraArguments, RLHFArguments, GaloreA
         self.freeze_vision_tower = self.freeze_vision_tower or self.train_mm_proj_only
         self.use_ref_model = self.stage == "dpo" and self.pref_loss not in ["orpo", "simpo"]
 
-        assert self.finetuning_type in ["lora", "freeze", "full", "EB_tuning"], "Invalid fine-tuning method."
+        assert self.finetuning_type in ["lora", "freeze", "full"], "Invalid fine-tuning method."
         assert self.ref_model_quantization_bit in [None, 8, 4], "We only accept 4-bit or 8-bit quantization."
         assert self.reward_model_quantization_bit in [None, 8, 4], "We only accept 4-bit or 8-bit quantization."
 
